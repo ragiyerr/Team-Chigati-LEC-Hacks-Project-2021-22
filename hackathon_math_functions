@@ -1,0 +1,118 @@
+import math
+
+def quadratic_formula():
+    # Ask for a, b, and c
+    a = float(input("a: "))
+    b = float(input("b: "))
+    c = float(input("c: "))
+
+    # Start Calculations:
+    discriminant = (float(b) * float(b)) - 4 * float(a) * float(c)
+    if discriminant < 0:
+        print("2 complex solutions, discriminant is", discriminant)
+    elif discriminant >= 0:
+        sqrt_discriminant = math.sqrt(discriminant)
+        solution_1 = (-b + sqrt_discriminant) / (2 * a)
+        solution_2 = (-b - sqrt_discriminant) / (2 * a)
+        # Give answer:
+        print("x =", solution_1, "x =", solution_2)
+
+def law_of_cosines():
+    leg1 = float(input("What is first leg? "))
+    leg2 = float(input("What is second leg? "))
+    angle = float(input("What is angle? "))
+    leg1sqrd = leg1 * leg1
+    leg2sqrd = leg2 * leg2
+    both = leg1sqrd + leg2sqrd
+    second_part = 2 * leg1 * leg2 * math.cos(angle)
+    almost_answer = both - second_part
+    answer = math.sqrt(almost_answer)
+
+    print("The answer is: ", answer)
+
+def arithmetic_series_partial_sum():
+    print ("y = ax + b")
+    a = int(input("a: "))
+    b = int(input("b: "))
+    first_term = int(input("Starting term: "))
+    terms = int(input("Final term: "))
+    a_of_start = (a*first_term) + b
+    a_of_final = (a*terms) + b
+    number_of_terms = (terms - first_term) + 1
+    answer_1 = (a_of_start + a_of_final)/2
+    answer_2 = answer_1 * number_of_terms
+    print ("Partial Sum: ", answer_2)
+
+def distance_formula():
+    x1 = eval(input("enter x1 : "))
+
+    x2 = eval(input("enter x2 : "))
+
+    y1 = eval(input("enter y1 : "))
+
+    y2 = eval(input("enter y2 : "))
+
+    distance = (((x2 - x1) ** 2) + ((y2 - y1) ** 2)) ** 0.5
+
+    print("distance between point 1:", (x1, y1), "and point 2:", (x2, y2), "is : ", distance)
+
+def geoPartialSum():
+    a1 = input("Enter the first term of the geometric sequence: ")
+    r = input("Enter the common ratio of the sequence: ")
+    n = input("Enter the number of terms in the sequence: ")
+
+    a1 = int(a1)
+    r = int(r)
+    n = int(n)
+    s = (a1 * (1 - r ** n)) / (1 - r)
+    print(s)
+
+
+def geoInfSum():
+    a2 = float(input("Enter the first term of the geometric sequence: "))
+    r2 = float(input("Enter the common ratio of the sequence: "))
+
+    s2 = a2 / (1 - r2)
+    print(s2)
+
+def standard_deviation():
+    data = []
+    print ("input the list: ")
+    a = ""
+    while a != "done":
+        a = input("Term: ")
+        if a != "done":
+            data.append(int(a))
+        else:
+            continue
+    mean = 0
+    for i in range(len(data)):
+        mean += data[i]
+    mean = mean/len(data)
+    total = 0
+    for p in range(len(data)):
+        total += (data[p]-mean)*(data[p]-mean)
+    answer_1 = total/(len(data)-1)
+    answer_2 = math.sqrt(answer_1)
+    print ("Answer: ",answer_2)
+
+def population_standard_deviation():
+    data = []
+    print("input the list: ")
+    a = ""
+    while a != "done":
+        a = input("Term: ")
+        if a != "done":
+            data.append(int(a))
+        else:
+            continue
+    mean = 0
+    for i in range(len(data)):
+        mean += data[i]
+    mean = mean / len(data)
+    total = 0
+    for p in range(len(data)):
+        total += (data[p] - mean) * (data[p] - mean)
+    answer_1 = total / len(data)
+    answer_2 = math.sqrt(answer_1)
+    print("Answer: ", answer_2)
