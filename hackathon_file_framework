@@ -1,0 +1,20 @@
+import math
+
+import hackathon_math_functions as lib
+
+print ("Use the following key: 1 - Quadratic, 2 - Law of Cosines")
+print ("3 - Standard Deviation, 4 - Population Standard Deviation")
+print ("5 - Arithmetic Series Partial Sum, 6 - Geometric Series Partial Sum")
+print ("7 - Geometric Series Infinite Sum, 8 - Distance Formula")
+
+choice = int(input(("Which formula do you want to use? ")))
+
+function_library = (lib.quadratic_formula, lib.law_of_cosines, lib.standard_deviation,
+                    lib.population_standard_deviation, lib.arithmetic_series_partial_sum,
+                    lib.geoPartialSum, lib.geoInfSum, lib.distance_formula)
+
+function_to_run = function_library[choice-1]
+
+name_of_function = "lib." + str(function_to_run.__name__)
+
+eval(name_of_function + "()")
